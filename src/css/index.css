@@ -1,10 +1,22 @@
 :root {
-  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark; */
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --color-main: #101828;
+  --color-text: #475467;
+  --color-gray: #6C717B;
+  --color-button: #E44848;
+  --color-hover: #D84343;
+  --color-rating: #FFC531;
+  --color-light: #DADDE1;
+  --color-badges: #F2F4F7;
+  --color-inputs: #F7F7F7;
+  --color-white: #FFFFFF;
+  --color-black: #000;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
