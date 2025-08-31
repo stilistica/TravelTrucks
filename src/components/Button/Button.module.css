@@ -1,9 +1,9 @@
 .btn {
-  width: 166px;
-  padding: 16px 0;
+  width: 140px;
+  padding: 14px 0;
 
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.01em;
   color: var(--color-white);
@@ -15,4 +15,12 @@
 .btn:hover,
 .btn:active {
   background: var(--color-hover);
+}
+@media only screen and (min-width: 1440px) {
+  .btn {
+    width: 166px;
+    padding: 16px 0;
+
+    font-size: 16px;
+  }
 }
