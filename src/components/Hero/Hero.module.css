@@ -1,0 +1,52 @@
+.hero {
+  background-image: url("../../assets/images/hero.webp");
+  /* fallback */
+  background-image: image-set(
+    url("../../assets/images/hero.webp") 1x,
+    url("../../assets/images/hero-2x.webp") 2x
+  );
+  /* background-size: contain; */
+  background-position: top center;
+  background-repeat: no-repeat;
+  height: 696px;
+  display: flex;
+  align-items: center;
+}
+.container {
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--color-inputs);
+}
+.text h1 {
+  font-size: 32px;
+  line-height: 1;
+}
+.text p {
+  font-size: 14px;
+  line-height: 1;
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    gap: 40px;
+  }
+  .text {
+    gap: 16px;
+  }
+  .text h1 {
+    font-size: 48px;
+    line-height: 0.66667;
+  }
+  .text p {
+    font-size: 24px;
+    line-height: 1.33333;
+  }
+}
