@@ -1,0 +1,34 @@
+.notFound {
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  animation: fadeIn 1s ease-in-out;
+}
+.notFound h1 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 0.66667;
+
+}
+.notFound p {
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--color-hover);
+
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
