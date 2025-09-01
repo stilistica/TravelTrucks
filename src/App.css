@@ -2,6 +2,10 @@
   padding: 2rem; 
   text-align: center; 
 } */
-
-
-
+.loadPage {
+  padding-top: 20px;
+  width: 250px;
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 28px;
+}
