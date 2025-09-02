@@ -4,7 +4,7 @@ import { getCampers } from "./operations";
 const initialState = {
   items: [],
   favoriteProducts: [],
-  filter: { page: 1, perPage: 4, equipment: [], type: "" },
+  filter: { page: 1, limit: 4, equipment: {}, form: "", location: "" },
   totalItems: 0,
   isLoading: false,
   error: null,
@@ -17,10 +17,14 @@ const campersSlice = createSlice({
     resetItems: (state) => {
       state.items = [];
       state.totalItems = 0;
+      state.filter.page = 1;
+    },
+    setPage: (state, action) => {
+      state.filter.page = action.payload;
     },
 
     setFilter: (state, action) => {
-      state.filter = { ...state.filter, ...action.payload };
+      state.filter = { ...state.filter, ...action.payload, page: 1 };
     },
     resetFilter: (state) => {
       state.filter = initialState.filter;
@@ -45,7 +49,11 @@ const campersSlice = createSlice({
       })
       .addCase(getCampers.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.items = action.payload.items;
+        if (state.filter.page > 1) {
+          state.items = [...state.items, ...action.payload.items];
+        } else {
+          state.items = action.payload.items;
+        }
         state.totalItems = action.payload.total;
         state.error = null;
       })
@@ -62,6 +70,7 @@ export const {
   setFilter,
   resetFilter,
   resetItems,
+  setPage,
 } = campersSlice.actions;
 
 export const campersReducer = campersSlice.reducer;

@@ -2,8 +2,26 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 
-export const fetchCampers = async (query = {}) => {
-  const { data } = await axios.get("/campers", { params: query });
+export const fetchCampers = async ({
+  page = 1,
+  limit = 4,
+  form,
+  location,
+  equipment = {},
+}) => {
+  const params = {
+    page,
+    limit,
+  };
+  if (form) params.form = form;
+  if (location) params.location = location;
+  Object.entries(equipment).forEach(([key, value]) => {
+    if (value !== undefined) {
+      params[key] = value;
+    }
+  });
+
+  const { data } = await axios.get("/campers", { params });
   return data;
 };
 
