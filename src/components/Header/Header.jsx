@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import Container from "../Container/Container";
 import s from "./Header.module.css";
-import sprite from "../../assets/icons/sprite.svg#icon-logo";
+import sprite from "../../assets/icons/sprite.svg";
 import clsx from "clsx";
 
 const Header = () => {
