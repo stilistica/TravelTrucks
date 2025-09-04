@@ -1,4 +1,4 @@
-import sprite from "../../assets/icons/sprite.svg";
+import sprite from "../assets/icons/sprite.svg";
 
 export const typeOptions = [
 	{ key: "panelTruck", label: "Panel Truck", iconUrl: `${sprite}#icon-van` },
