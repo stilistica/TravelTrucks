@@ -9,6 +9,7 @@ import {
 } from "../../redux/campers/selectors";
 import { getCampers } from "../../redux/campers/operations";
 import { useEffect, useState } from "react";
+import { ClipLoader } from "react-spinners";
 
 import CampersList from "../../components/CampersList/CampersList";
 import { setFilter, setPage } from "../../redux/campers/slice";
@@ -51,12 +52,12 @@ function CampersPage() {
         equipment,
         form,
         transmission,
-        engine
+        engine,
       })
     );
   };
 
-  if (loading) return <p>Loading...</p>;
+  // if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
 
   return (
@@ -68,23 +69,33 @@ function CampersPage() {
 
             <div className={s.optionsFilter}>
               <p className={s.title}>Filters</p>
-              <EquipmentFilter selected={equipment} setSelected={setEquipment}/>
-              <TransmissionFilter selected={transmission} setSelected={setTransmission}/>
-              <EngineFilter selected={engine} setSelected={setEngine}/>
-              <TypeFilter selected={form} setSelected={setForm}/>
+              <EquipmentFilter
+                selected={equipment}
+                setSelected={setEquipment}
+              />
+              <TransmissionFilter
+                selected={transmission}
+                setSelected={setTransmission}
+              />
+              <EngineFilter selected={engine} setSelected={setEngine} />
+              <TypeFilter selected={form} setSelected={setForm} />
             </div>
 
             <Button onClick={handleApplyFilters}>Search</Button>
           </div>
 
           <div>
-            {campers.length === 0 ? (
+            {loading ? (
+              <ClipLoader size={70} color="#D84343"/>
+            ) : campers.length === 0 ? (
               <p>За цим фільтром немає результатів</p>
             ) : (
-              <CampersList campers={campers} />
-            )}
-            {campers.length < totalItems && (
-              <button onClick={handleLoadMore}>Load More</button>
+              <>
+                <CampersList campers={campers} />
+                {campers.length < totalItems && (
+                  <button onClick={handleLoadMore}>Load More</button>
+                )}
+              </>
             )}
           </div>
         </div>

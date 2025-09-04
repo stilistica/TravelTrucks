@@ -1,12 +1,14 @@
 // import s from './CampersList.module.css'
 
-const CampersList = ({campers}) => {
-	
+import CamperCard from "../CamperCard/CamperCard"
 
+const CampersList = ({campers}) => {
 	return (
 		<ul>
 			{campers.map(c => (
-				<li key={c.id}>{c.name}</li>
+				<li key={c.id}>
+					<CamperCard camper={c}/>
+				</li>
 			))}
 		</ul>
 	)
