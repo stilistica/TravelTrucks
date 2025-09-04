@@ -19,7 +19,7 @@ import Button from "../../components/Button/Button";
 import EquipmentFilter from "../../components/EquipmentFilter/EquipmentFilter";
 import TypeFilter from "../../components/TypeFilter/TypeFilter";
 import TransmissionFilter from "../../components/TransmissionFilter/TransmissionFilter";
-import EngineFilter from "../../components/engineFilter/engineFilter";
+import EngineFilter from "../../components/EngineFilter/EngineFilter";
 
 function CampersPage() {
   const dispatch = useDispatch();
