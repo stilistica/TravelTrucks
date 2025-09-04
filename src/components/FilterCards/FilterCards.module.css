@@ -1,0 +1,53 @@
+.filter {
+  display: grid;
+  flex-direction: column;
+  /* gap: 24px; */
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-main);
+}
+.filter hr {
+  margin: 24px 0 24px 0;
+  border: var(--color-light) solid 1px;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.card {
+  width: 112px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border: 1px solid var(--color-light);
+  background: var(--color-white);
+  border-radius: 12px;
+}
+.card.active {
+  border: 1px solid #e44848;
+}
+.card svg {
+  width: 32px;
+  height: 32px;
+}
+.card p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-main);
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 1440px) {
+
+}
