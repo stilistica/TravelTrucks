@@ -7,6 +7,7 @@ import "./App.css";
 // import NotFound from "./pages/NotFound/NotFound";
 // import CamperPage from "./pages/CamperPage/CamperPage";
 import Layout from "./components/Layout/Layout";
+import { ClipLoader } from "react-spinners";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound.jsx"));
@@ -17,7 +18,7 @@ function App() {
   return (
     <>
       <Layout>
-        <Suspense fallback={<div className="loadPage">Loading page...</div>}>
+        <Suspense fallback={<div className="loadPage"><ClipLoader size={52} color="#D84343"/></div>}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CampersPage />} />
