@@ -8,13 +8,18 @@ export const fetchCampers = async ({
   form,
   location,
   equipment = {},
+  transmission,
+  engine,
 }) => {
   const params = {
     page,
     limit,
   };
   if (form) params.form = form;
+  if (transmission) params.transmission = transmission;
+  if (engine) params.engine = engine;
   if (location) params.location = location;
+  
   Object.entries(equipment).forEach(([key, value]) => {
     if (value !== undefined) {
       params[key] = value;

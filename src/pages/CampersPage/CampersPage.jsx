@@ -1,4 +1,4 @@
-// import s from './CampersPage.module.css';
+import s from "./CampersPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCampers,
@@ -11,7 +11,14 @@ import { getCampers } from "../../redux/campers/operations";
 import { useEffect, useState } from "react";
 
 import CampersList from "../../components/CampersList/CampersList";
-import { resetFilter, setFilter, setPage } from "../../redux/campers/slice";
+import { setFilter, setPage } from "../../redux/campers/slice";
+import LocationFilter from "../../components/LocationFilter/LocationFilter";
+import Container from "../../components/Container/Container";
+import Button from "../../components/Button/Button";
+import EquipmentFilter from "../../components/EquipmentFilter/EquipmentFilter";
+import TypeFilter from "../../components/TypeFilter/TypeFilter";
+import TransmissionFilter from "../../components/TransmissionFilter/TransmissionFilter";
+import EngineFilter from "../../components/engineFilter/engineFilter";
 
 function CampersPage() {
   const dispatch = useDispatch();
@@ -25,6 +32,8 @@ function CampersPage() {
   const [location, setLocation] = useState(filter.location || "");
   const [equipment, setEquipment] = useState(filter.equipment || {});
   const [form, setForm] = useState(filter.form || "");
+  const [transmission, setTransmission] = useState(filter.transmission || "");
+  const [engine, setEngine] = useState(filter.engine || "");
 
   useEffect(() => {
     dispatch(getCampers(filter));
@@ -41,87 +50,45 @@ function CampersPage() {
         location,
         equipment,
         form,
+        transmission,
+        engine
       })
     );
   };
 
-  const handleResetFilters = () => {
-    setLocation("");
-    setEquipment({});
-    setForm("");
-    dispatch(resetFilter());
-  };
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
-  if (!loading && campers.length === 0) {
-  return <p>За цим фільтром немає результатів</p>;
-}
 
   return (
     <>
-      <div>
-        <aside style={{ width: "250px" }}>
-          <h3>Filters</h3>
+      <Container>
+        <div className={s.container}>
+          <div className={s.filter}>
+            <LocationFilter location={location} setLocation={setLocation} />
 
-          {/* Location */}
+            <div className={s.optionsFilter}>
+              <p className={s.title}>Filters</p>
+              <EquipmentFilter selected={equipment} setSelected={setEquipment}/>
+              <TransmissionFilter selected={transmission} setSelected={setTransmission}/>
+              <EngineFilter selected={engine} setSelected={setEngine}/>
+              <TypeFilter selected={form} setSelected={setForm}/>
+            </div>
+
+            <Button onClick={handleApplyFilters}>Search</Button>
+          </div>
+
           <div>
-            <label>Location</label>
-            <input
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-            />
+            {campers.length === 0 ? (
+              <p>За цим фільтром немає результатів</p>
+            ) : (
+              <CampersList campers={campers} />
+            )}
+            {campers.length < totalItems && (
+              <button onClick={handleLoadMore}>Load More</button>
+            )}
           </div>
-
-          {/* Equipment */}
-          <div>
-            <h4>Equipment</h4>
-            {["AC", "automatic", "kitchen", "TV", "bathroom"].map((eq) => (
-              <label key={eq}>
-                <input
-                  type="checkbox"
-                  checked={!!equipment[eq]}
-                  onChange={(e) =>
-                    setEquipment({
-                      ...equipment,
-                      [eq]: e.target.checked,
-                    })
-                  }
-                />
-                {eq}
-              </label>
-            ))}
-          </div>
-
-          {/* Type */}
-          <div>
-            <h4>Type</h4>
-            {["van", "fullyIntegrated", "alcove"].map((type) => (
-              <label key={type}>
-                <input
-                  type="radio"
-                  name="form"
-                  value={type}
-                  checked={form === type}
-                  onChange={() => setForm(type)}
-                />
-                {type}
-              </label>
-            ))}
-          </div>
-
-          {/* Кнопки */}
-          <div style={{ marginTop: "10px" }}>
-            <button onClick={handleApplyFilters}>Apply</button>
-            <button onClick={handleResetFilters}>Reset</button>
-          </div>
-        </aside>
-      </div>
-      <CampersList campers={campers} />
-      {campers.length < totalItems && (
-        <button onClick={handleLoadMore}>Load More</button>
-      )}
+        </div>
+      </Container>
     </>
   );
 }

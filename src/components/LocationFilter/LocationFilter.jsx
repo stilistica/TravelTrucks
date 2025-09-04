@@ -64,6 +64,24 @@ const LocationFilter = ({ location, setLocation }) => {
               marginTop: "4px",
               zIndex: 100,
             }),
+            option: (base, state) => ({
+              ...base,
+              backgroundColor: state.isSelected
+                ? "var(--color-button)" // вибраний пункт
+                : state.isFocused
+                ? "rgba(255, 89, 89, 0.1)" // ховер (підсвітка червоним)
+                : "white", // звичайний
+              color: state.isSelected
+                ? "white" // текст білий для активного
+                : state.isFocused
+                ? "var(--color-main)" // червоний при ховері
+                : "var(--color-main-dark)", // стандартний колір тексту
+              cursor: "pointer",
+              "&:active": {
+                backgroundColor: "rgba(255, 89, 89, 0.2)", // світліший червоний при кліку
+                color: "var(--color-main)",
+              },
+            }),
           }}
         />
       </div>

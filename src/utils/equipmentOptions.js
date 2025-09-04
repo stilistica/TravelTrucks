@@ -1,20 +1,6 @@
 import sprite from "../assets/icons/sprite.svg";
 
 export const equipmentOptions = [
-  {
-    key: "transmission",
-    label: "Transmission",
-    type: "string",
-    values: ["manual", "automatic"],
-    iconUrl: `${sprite}#icon-automatic`,
-  },
-  {
-    key: "engine",
-    label: "Engine",
-    type: "string",
-    values: ["diesel", "petrol"],
-    iconUrl: `${sprite}#icon-petrol`,
-  },
   { key: "AC", label: "AC", iconUrl: `${sprite}#icon-ac`, type: "boolean" },
   {
     key: "bathroom",
@@ -37,7 +23,7 @@ export const equipmentOptions = [
   },
   {
     key: "refrigerator",
-    label: "refrigerator",
+    label: "Refrigerator",
     iconUrl: `${sprite}#icon-refrigerator`,
     type: "boolean",
   },

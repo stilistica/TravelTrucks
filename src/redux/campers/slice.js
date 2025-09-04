@@ -4,7 +4,15 @@ import { getCampers } from "./operations";
 const initialState = {
   items: [],
   favoriteProducts: [],
-  filter: { page: 1, limit: 4, equipment: {}, form: "", location: "" },
+  filter: {
+    page: 1,
+    limit: 4,
+    equipment: {},
+    form: "",
+    location: "",
+    transmission: "",
+    engine: "",
+  },
   totalItems: 0,
   isLoading: false,
   error: null,
