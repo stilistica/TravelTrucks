@@ -7,6 +7,7 @@
 .filter {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
   width: 100%;
 }
@@ -21,17 +22,27 @@
   line-height: 1.5;
   color: var(--color-text);
 }
-@media only screen and (min-width: 768px) {
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.load {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 1440px) {
   .container {
     flex-direction: row;
   }
   .filter {
-    width: 300px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .filter {
     width: 360px;
+    align-items: normal;
+  }
+  .load {
+    width: 888px;
   }
 }

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.text {
+  color: var(--color-main);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    align-items: normal;
+  }
+}

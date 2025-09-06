@@ -1,12 +1,11 @@
 .container {
   display: flex;
-  gap: 12px;
-  /* justify-items: center; */
   align-items: center;
+  justify-content: space-between;
 }
 .price {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.33333;
   color: var(--color-main);
 }
@@ -24,7 +23,20 @@
 }
 .heart {
   fill: var(--color-main);
+  transition: all 0.5s ease;
+}
+.heart:hover {
+  fill: var(--color-button);
 }
 .heartActive {
   fill: var(--color-button);
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    gap: 12px;
+    justify-self: start;
+  }
+  .price {
+    font-size: 24px;
+  }
 }
