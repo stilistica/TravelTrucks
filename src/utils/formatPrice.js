@@ -1,7 +1,9 @@
 export const formatPrice = (price) => {
-	return new Intl.NumberFormat("de-DE", {
-		style: "currency",
-		currency: "EUR",
+	const num = Number(price) || 0;
+	const amount = new Intl.NumberFormat("de-DE", {
 		minimumFractionDigits: 2,
-	}).format(price);
+		// maximumFractionDigits:2,
+		useGrouping: false,
+	}).format(num);
+	return `€${amount}`
 };

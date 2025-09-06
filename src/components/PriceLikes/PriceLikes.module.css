@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  gap: 12px;
+  /* justify-items: center; */
+  align-items: center;
+}
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: var(--color-main);
+}
+.favoriteBtn {
+  width: 26px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 50px;
+  background: transparent;
+}
+.favoriteBtn svg {
+  width: 26px;
+  height: 24px;
+}
+.heart {
+  fill: var(--color-main);
+}
+.heartActive {
+  fill: var(--color-button);
+}

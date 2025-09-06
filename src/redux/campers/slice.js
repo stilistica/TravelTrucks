@@ -3,7 +3,7 @@ import { getCampers } from "./operations";
 
 const initialState = {
   items: [],
-  favoriteProducts: [],
+  favoriteCampers: [],
   filter: {
     page: 1,
     limit: 4,
@@ -39,12 +39,12 @@ const campersSlice = createSlice({
     },
 
     addToFavorites: (state, action) => {
-      if (!state.favoriteProducts.includes(action.payload)) {
-        state.favoriteProducts.push(action.payload);
+      if (!state.favoriteCampers.includes(action.payload)) {
+        state.favoriteCampers.push(action.payload);
       }
     },
     removeFromFavorites: (state, action) => {
-      state.favoriteProducts = state.favoriteProducts.filter(
+      state.favoriteCampers = state.favoriteCampers.filter(
         (id) => id !== action.payload
       );
     },
