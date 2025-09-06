@@ -20,6 +20,8 @@ import EquipmentFilter from "../../components/EquipmentFilter/EquipmentFilter";
 import TypeFilter from "../../components/TypeFilter/TypeFilter";
 import TransmissionFilter from "../../components/TransmissionFilter/TransmissionFilter";
 import EngineFilter from "../../components/EngineFilter/EngineFilter";
+import LoadMore from "../../components/LoadMore/LoadMore";
+import NotFoundCamper from "../../components/NotFoundCamper/NotFoundCamper";
 
 function CampersPage() {
   const dispatch = useDispatch();
@@ -55,15 +57,17 @@ function CampersPage() {
         engine,
       })
     );
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
   };
-
-  // if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error...</p>;
 
   return (
     <>
       <Container>
         <div className={s.container}>
+          {error && <p>Error...</p>}
           <div className={s.filter}>
             <LocationFilter location={location} setLocation={setLocation} />
 
@@ -84,16 +88,19 @@ function CampersPage() {
             <Button onClick={handleApplyFilters}>Search</Button>
           </div>
 
-          <div>
-            {loading ? (
-              <ClipLoader size={70} color="#D84343"/>
-            ) : campers.length === 0 ? (
-              <p>За цим фільтром немає результатів</p>
+          <div className={s.list}>
+            {campers.length === 0 && !loading ? (
+              <NotFoundCamper />
             ) : (
               <>
                 <CampersList campers={campers} />
-                {campers.length < totalItems && (
-                  <button onClick={handleLoadMore}>Load More</button>
+                {loading && (
+                  <div className={s.load}>
+                    <ClipLoader size={70} color="#D84343" />
+                  </div>
+                )}
+                {!loading && campers.length < totalItems && (
+                  <LoadMore onClick={handleLoadMore}>Load More</LoadMore>
                 )}
               </>
             )}

@@ -1,10 +1,10 @@
-// import s from './CampersList.module.css'
+import s from './CampersList.module.css'
 
 import CamperCard from "../CamperCard/CamperCard"
 
 const CampersList = ({campers}) => {
 	return (
-		<ul>
+		<ul className={s.list}>
 			{campers.map(c => (
 				<li key={c.id}>
 					<CamperCard camper={c}/>
