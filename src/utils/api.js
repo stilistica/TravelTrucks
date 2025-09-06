@@ -19,18 +19,24 @@ export const fetchCampers = async ({
   if (transmission) params.transmission = transmission;
   if (engine) params.engine = engine;
   if (location) params.location = location;
-  
+
   Object.entries(equipment).forEach(([key, value]) => {
     if (value !== undefined) {
       params[key] = value;
     }
   });
 
-  const { data } = await axios.get("/campers", { params });
+  const { data, status } = await axios.get("/campers", {
+    params,
+    validateStatus: (status) => status === 200 || status === 404,
+  });
+  if (status === 404) {
+    return { items: [], total: 0 };
+  }
   return data;
 };
 
-export const fetchCamperById = async (id) => {
-  const { data } = await axios.get(`/campers/${id}`);
-  return data;
-};
+// export const fetchCamperById = async (id) => {
+//   const { data } = await axios.get(`/campers/${id}`);
+//   return data;
+// };
