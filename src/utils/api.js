@@ -36,7 +36,7 @@ export const fetchCampers = async ({
   return data;
 };
 
-// export const fetchCamperById = async (id) => {
-//   const { data } = await axios.get(`/campers/${id}`);
-//   return data;
-// };
+export const fetchCamperById = async (id) => {
+  const { data } = await axios.get(`/campers/${id}`);
+  return data;
+};

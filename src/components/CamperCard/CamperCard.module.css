@@ -85,9 +85,9 @@
   }
   .image {
     width: 292px;
-  height: 320px;
-  object-fit: cover;
-  object-position: center center;
+    height: 320px;
+    object-fit: cover;
+    object-position: center center;
   }
   .info {
     max-width: 524px;
