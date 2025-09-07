@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 
 import CampersList from "../../components/CampersList/CampersList";
-import { setFilter, setPage } from "../../redux/campers/slice";
+import { resetFilter, setFilter, setPage } from "../../redux/campers/slice";
 import LocationFilter from "../../components/LocationFilter/LocationFilter";
 import Container from "../../components/Container/Container";
 import Button from "../../components/Button/Button";
@@ -59,8 +59,18 @@ function CampersPage() {
     );
     window.scrollTo({
       top: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
+  };
+
+  const handleResetFilters = () => {
+    setLocation("");
+    setEquipment({});
+    setForm("");
+    setTransmission("");
+    setEngine("");
+
+    dispatch(resetFilter());
   };
 
   return (
@@ -90,7 +100,7 @@ function CampersPage() {
 
           <div className={s.list}>
             {campers.length === 0 && !loading ? (
-              <NotFoundCamper />
+              <NotFoundCamper handleResetFilters={handleResetFilters} />
             ) : (
               <>
                 <CampersList campers={campers} />
