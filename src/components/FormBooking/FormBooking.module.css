@@ -1,7 +1,9 @@
 .container {
-  padding: 44px 57px;
+  /* padding: 44px 57px; */
+  padding: 30px 15px;
   box-sizing: border-box;
-  width: 641px;
+  /* width: 641px; */
+  width: 327px;
 
   border: 1px solid #dadde1;
   border-radius: 10px;
@@ -17,13 +19,15 @@
 }
 .title {
   font-weight: 600;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 18px;
   line-height: 1.2;
   color: var(--color-main);
 }
 .text {
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 14px;
   line-height: 1.5;
   color: var(--color-gray);
 }
@@ -49,7 +53,7 @@
   border: none;
   background: var(--color-inputs);
 
-	font-weight: 400;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-main);
@@ -58,7 +62,8 @@
   height: 60px;
 }
 .datepicker {
-  width: 527px;
+  /* width: 527px; */
+  width: 295px;
   height: 60px;
 }
 .comment {
@@ -79,7 +84,6 @@
   border: 2px solid var(--color-button); /* червоний бордер */
   background: var(--color-inputs);
 }
-
 
 .error {
   padding-top: 8px;
@@ -106,4 +110,20 @@
 .btn:hover,
 .btn:active {
   background: var(--color-hover);
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    padding: 44px 57px;
+    width: 641px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .datepicker {
+    width: 527px;
+  }
 }
