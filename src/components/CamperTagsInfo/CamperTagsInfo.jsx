@@ -1,8 +1,8 @@
 import { useState } from "react";
 import s from "./CamperTagsInfo.module.css";
-import Features from "../Features/Features";
-import Reviews from "../Reviews/Reviews";
-import Form from "../Form/Form";
+import Features from "../Features/Features.jsx";
+import Reviews from "../Reviews/Reviews.jsx";
+import FormBooking from "../FormBooking/FormBooking.jsx";
 
 const CamperTagsInfo = ({ camper }) => {
   const [activeTab, setActiveTab] = useState("features");
@@ -29,7 +29,7 @@ const CamperTagsInfo = ({ camper }) => {
 				{activeTab === "reviews" && (
 					<Reviews reviews={camper.reviews}/>
 				)}
-				<Form camperId={camper.id}/>
+				<FormBooking/>
 			</div>
     </div>
   );
