@@ -31,9 +31,6 @@ function CamperPage() {
   if (error) {
     return <p>Error</p>;
   }
-  // if (!camper) {
-  //   return <p></p>;
-  // }
   return (
     <>
       <Container>

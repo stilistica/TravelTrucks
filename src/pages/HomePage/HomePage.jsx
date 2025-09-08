@@ -1,14 +1,12 @@
-// import s from './HomePage.module.css';
 
 import Hero from "../../components/Hero/Hero";
 
 function HomePage() {
-
   return (
     <>
-    <Hero/>
+      <Hero />
     </>
-  )
+  );
 }
 
 export default HomePage;

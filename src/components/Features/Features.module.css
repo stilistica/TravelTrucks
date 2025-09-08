@@ -1,21 +1,17 @@
 .container {
-  /* padding: 44px 52px; */
   padding: 30px 15px;
   border-radius: 10px;
   background: var(--color-inputs);
   box-sizing: border-box;
   width: 327px;
-  /* width: 631px; */
 
   display: flex;
   flex-direction: column;
-  /* gap: 100px; */
   gap: 50px;
 }
 .details {
   display: flex;
   flex-direction: column;
-  /* gap: 24px; */
   gap: 4px;
 }
 .title {
@@ -25,7 +21,6 @@
   color: var(--color-main);
 }
 .details hr {
-  /* margin: 24px 0 24px 0; */
   margin: 8px 0 8px 0;
   border: var(--color-light) solid 1px;
 }
@@ -39,7 +34,6 @@
   align-items: center;
 
   font-weight: 500;
-  /* font-size: 16px; */
   font-size: 14px;
   line-height: 1.5;
   text-align: center;

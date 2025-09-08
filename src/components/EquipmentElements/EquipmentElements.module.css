@@ -24,14 +24,14 @@
 }
 
 @media only screen and (min-width: 768px) {
-.item {
-  padding: 12px 18px;
-}
-.icon {
-  width: 20px;
-  height: 20px;
-}
-.item p {
-  font-size: 16px;
-}
+  .item {
+    padding: 12px 18px;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .item p {
+    font-size: 16px;
+  }
 }

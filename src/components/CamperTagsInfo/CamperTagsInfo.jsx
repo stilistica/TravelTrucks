@@ -22,15 +22,11 @@ const CamperTagsInfo = ({ camper }) => {
           Reviews
         </button>
       </div>
-			<div className={s.infoTabs}>
-				{activeTab === "features" && (
-					<Features camper={camper}/>
-				)}
-				{activeTab === "reviews" && (
-					<Reviews reviews={camper.reviews}/>
-				)}
-				<FormBooking/>
-			</div>
+      <div className={s.infoTabs}>
+        {activeTab === "features" && <Features camper={camper} />}
+        {activeTab === "reviews" && <Reviews reviews={camper.reviews} />}
+        <FormBooking />
+      </div>
     </div>
   );
 };

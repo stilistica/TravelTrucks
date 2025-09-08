@@ -4,12 +4,13 @@ import FilterCards from "../FilterCards/FilterCards.jsx";
 const EngineFilter = ({ selected, setSelected }) => {
   return (
     <div>
-			<FilterCards
-			title="Engine"
-			options={engineOptions}
-			selected={selected}
-			onChange={setSelected}
-			multiple={false}/>
+      <FilterCards
+        title="Engine"
+        options={engineOptions}
+        selected={selected}
+        onChange={setSelected}
+        multiple={false}
+      />
     </div>
   );
 };

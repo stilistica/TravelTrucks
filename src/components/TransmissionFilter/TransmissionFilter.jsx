@@ -4,12 +4,13 @@ import FilterCards from "../FilterCards/FilterCards.jsx";
 const TransmissionFilter = ({ selected, setSelected }) => {
   return (
     <div>
-			<FilterCards
-			title="Transmission"
-			options={transmissionOptions}
-			selected={selected}
-			onChange={setSelected}
-			multiple={false}/>
+      <FilterCards
+        title="Transmission"
+        options={transmissionOptions}
+        selected={selected}
+        onChange={setSelected}
+        multiple={false}
+      />
     </div>
   );
 };

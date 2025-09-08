@@ -76,7 +76,7 @@ const campersSlice = createSlice({
       })
       .addCase(getCamperById.fulfilled, (state, action) => {
         state.isLoading = false;
-        const exists = state.items.find(c => c.id === action.payload.id);
+        const exists = state.items.find((c) => c.id === action.payload.id);
         if (!exists) {
           state.items.push(action.payload);
         }
@@ -85,7 +85,7 @@ const campersSlice = createSlice({
       .addCase(getCamperById.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      })
+      });
   },
 });
 

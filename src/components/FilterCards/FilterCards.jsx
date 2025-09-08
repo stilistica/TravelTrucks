@@ -19,7 +19,7 @@ const FilterCards = ({ title, options, selected, onChange, multiple }) => {
       <hr />
       <ul className={s.list}>
         {options.map((opt) => (
-          <li key={opt.key} >
+          <li key={opt.key}>
             <button
               type="button"
               className={`${s.card} ${

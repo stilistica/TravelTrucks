@@ -9,8 +9,8 @@ const Features = ({ camper }) => {
     typeOptions.find((option) => option.key === camper.form)?.label ||
     camper.form;
   const transmissionLabel =
-    transmissionOptions.find((option) => option.key === camper.transmission)?.label ||
-    camper.transmission;
+    transmissionOptions.find((option) => option.key === camper.transmission)
+      ?.label || camper.transmission;
   const engineLabel =
     engineOptions.find((option) => option.key === camper.engine)?.label ||
     camper.engine;

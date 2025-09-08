@@ -20,11 +20,9 @@
 }
 .galleryContainer {
   display: flex;
-  /* flex-direction: row; */
   flex-direction: column;
   align-items: center;
 
-  /* gap: 48px; */
   gap: 30px;
 }
 .gallery {
@@ -50,13 +48,10 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    /* gap: 48px; */
     gap: 30px;
   }
   .gallery {
-    /* width: 277px; */
     width: 207px;
-    /* height: 312px; */
     height: 282px;
   }
 }

@@ -3,14 +3,14 @@
 
   --color-main: #101828;
   --color-text: #475467;
-  --color-gray: #6C717B;
-  --color-button: #E44848;
-  --color-hover: #D84343;
-  --color-rating: #FFC531;
-  --color-light: #DADDE1;
-  --color-badges: #F2F4F7;
-  --color-inputs: #F7F7F7;
-  --color-white: #FFFFFF;
+  --color-gray: #6c717b;
+  --color-button: #e44848;
+  --color-hover: #d84343;
+  --color-rating: #ffc531;
+  --color-light: #dadde1;
+  --color-badges: #f2f4f7;
+  --color-inputs: #f7f7f7;
+  --color-white: #ffffff;
   --color-black: #000;
 
   color: var(--color-main);

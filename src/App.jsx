@@ -18,7 +18,13 @@ function App() {
   return (
     <>
       <Layout>
-        <Suspense fallback={<div className="loadPage"><ClipLoader size={52} color="#D84343"/></div>}>
+        <Suspense
+          fallback={
+            <div className="loadPage">
+              <ClipLoader size={52} color="#D84343" />
+            </div>
+          }
+        >
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CampersPage />} />
