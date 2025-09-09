@@ -10,6 +10,10 @@ const CamperCard = ({ camper }) => {
 
   const handleShowMore = () => {
     navigate(`/catalog/${camper.id}`);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (

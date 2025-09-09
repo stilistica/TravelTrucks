@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <div className={s.hero}>
+    <div className={s.hero} rel="preload">
       <Container>
         <div className={s.container}>
           <div className={s.text}>
